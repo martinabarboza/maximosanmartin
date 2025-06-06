@@ -1,3 +1,17 @@
+<?php
+// Conexión a la base de datos (ajustá los datos a tu entorno)
+$host = "localhost";
+$usuario = "root";
+$contrasena = "";
+$base_datos = "maximo";
+
+$conn = mysqli_connect($host, $usuario, $contrasena, $base_datos);
+
+// Verificar conexión
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -14,8 +28,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Máximo San Martín</title>
-  </head> 
-   
+  </head>
+
   <body>
     <header>
       <img
@@ -23,20 +37,16 @@
         src="imagenes/logomaximocompleto.png"
         alt="Logo de Máximo San Martín completo"
       />
-         <div id="container"><div class="toggle"></div>
-    </div>  
-   </div>
-    
-      
+      <div id="container"><div class="toggle"></div></div>
     </header>
 
-    <h1>Bienvenido!</h1>
+    <h1>¡Bienvenido!</h1>
     <p>Descubrí outfits que se adapten a tu estilo haciendo clic aquí abajo.</p>
-  <div class="inicio-container">
-  <a href="opciones.html" id="botoniniciar">INICIAR EXPERIENCIA</a>
-</div>
 
-  
+    <div class="inicio-container">
+      <a href="opciones.php" id="botoniniciar">INICIAR EXPERIENCIA</a>
+    </div>
+
     <footer>
       <img
         class="logomaximo"

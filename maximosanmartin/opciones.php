@@ -1,3 +1,16 @@
+<?php
+// Conexión a la base de datos (igual que en index.php)
+$host = "localhost";
+$usuario = "root";
+$contrasena = "";
+$base_datos = "maximo";
+
+$conn = mysqli_connect($host, $usuario, $contrasena, $base_datos);
+
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -14,8 +27,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Máximo San Martín</title>
-  </head> 
-   
+  </head>
+
   <body>
     <header>
       <img
@@ -23,25 +36,30 @@
         src="imagenes/logomaximocompleto.png"
         alt="Logo de Máximo San Martín completo"
       />
-         <div id="container"><div class="toggle"></div>
-    </div>  
-   </div>
-    
-      
+      <div id="container"><div class="toggle"></div></div>
     </header>
 
     <h1>Elegí tu estilo</h1>
-    <p>Cuando sabés lo que querés, se nota. Esto empieza con una buena elección.</p>
-  <div class="container-estilos">
-  <a href="#" class="estilos" id="estiloformal">FORMAL</a>
-</div>
-  <div class="container-estilo">
-  <a href="#" class="estilos" id="estilocasual">CASUAL</a>
-</div>
-  <div class="container-estilos">
-  <a href="#" class="estilos" id="estilourbano">URBANO</a>
-</div>
-  
+    <p>
+      Cuando sabés lo que querés, se nota. Esto empieza con una buena elección.
+    </p>
+
+    <div class="container-estilos">
+      <a href="galeria.php?estilo=formal" class="estilos" id="estiloformal"
+        >FORMAL</a
+      >
+    </div>
+    <div class="container-estilo">
+      <a href="galeria.php?estilo=casual" class="estilos" id="estilocasual"
+        >CASUAL</a
+      >
+    </div>
+    <div class="container-estilos">
+      <a href="galeria.php?estilo=urbano" class="estilos" id="estilourbano"
+        >URBANO</a
+      >
+    </div>
+
     <footer>
       <img
         class="logomaximo"
